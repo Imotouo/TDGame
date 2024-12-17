@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="contain">
+        <div id="topList">
+            <div id="wave" style="display: inline-block;">Wave:0</div>
+            <div id="mode" style="display: inline-block;margin-left: 20%;">Mode:Easy</div>
+        </div>
+        <canvas id="myCanvas"></canvas>
+        <div id="Score"></div>
+        <div id="shop" style="display: none">
+            <table id="itemTableWater">
+                <tr>
+                    <th>技能</th>
+                    <th>敘述</th>
+                    <th>價格</th>
+                    <th>購買</th>
+                    <th>等級</th>
+                </tr>
+                <tr>
+                    <td rowspan="5"><img src="./image/Water__01.png" alt="" width="200" height="200px" id="waterBallImage"></td>
+                    <td>傷害</td>
+                    <td>30coin</td>
+                    <td><input type="button" value="BUY" id="buy_waterBallDmg" class="btn-3"></td>
+                    <td id="buy_waterBallDmgValue">LEVEL 1</td>
+                </tr>
+                <tr>
+                    <td>穿透</td>
+                    <td>30coin</td>
+                    <td><input type="button" value="BUY" id="buy_waterBallPen" class="btn-3"></td>
+                    <td id="buy_waterBallPenValue">LEVEL 1</td>
+                </tr>
+                <tr>
+                    <td>飛行速度</td>
+                    <td>30coin</td>
+                    <td><input type="button" value="BUY" id="buy_waterBallSpeed" class="btn-3"></td>
+                    <td id="buy_waterBallSpeedValue">LEVEL 1</td>
+                </tr>
+            </table>
+            <table id="itemTableFire">
+                <tr>
+                    <th>技能</th>
+                    <th>敘述</th>
+                    <th>價格</th>
+                    <th>購買</th>
+                    <th>等級</th>
+                </tr>
+                <tr>
+                    <td rowspan="5"><img src="./image/Fire_01.png" alt="" id="fireBallImage" width="200"></td>
+                    <td>傷害</td>
+                    <td>30coin</td>
+                    <td><input type="button" value="BUY" id="buy_fireBallDmg" class="btn-3"></td>
+                    <td id="buy_fireBallDmgValue">LEVEL 1</td>
+                </tr>
+                <tr>
+                    <td>穿透</td>
+                    <td>30coin</td>
+                    <td><input type="button" value="BUY" id="buy_fireBallPen" class="btn-3"></td>
+                    <td id="buy_fireBallPenValue">LEVEL 1</td>
+                </tr>
+                <tr>
+                    <td>飛行速度</td>
+                    <td>30coin</td>
+                    <td><input type="button" value="BUY" id="buy_fireBallSpeed" class="btn-3"></td>
+                    <td id="buy_fireBallSpeedValue">LEVEL 1</td>
+                </tr>
+            </table>
+        </div>
+        <div id="setting" style="display: none">
+            <div style="margin-top: 20px;">
+                <input type="button" value="按鍵設定" id="btn_keySetting" class="btn-4" style="background-color: #ff3d6a;">
+                <input type="button" value="背景設定" id="btn_bgSetting" class="btn-4">
+            </div>
+            <div id="changeKey">
+                <table style="border: 3px black solid; font-size: 36px; text-align: center;margin: auto;margin-top: 50px; display: inline-block;">
+                    <tr>
+                        <td colspan="3">先按按鍵，再按更改</td>
+                    </tr>
+                    <tr>
+                        <td id="yourKey" colspan="3"></td>
+                    </tr>
+                    <tr>
+                        <td>控制火球上</td>
+                        <td id="fireKeyUp">KeyQ</td>
+                        <td><input type="button" value="更改" id="btn_fireKeyUp" class="btn-3"></td>
+                    </tr>
+                    <tr>
+                        <td>控制火球下</td>
+                        <td id="fireKeyDown">KeyZ</td>
+                        <td><input type="button" value="更改" id="btn_fireKeyDown" class="btn-3"></td>
+                    </tr>
+                    <tr>
+                        <td>控制水球上</td>
+                        <td id="waterKeyUp">KeyW</td>
+                        <td><input type="button" value="更改" id="btn_waterKeyUp" class="btn-3"></td>
+                    </tr>
+                    <tr>
+                        <td>控制水球下</td>
+                        <td id="waterKeyDown">KeyX</td>
+                        <td><input type="button" value="更改" id="btn_waterKeyDown" class="btn-3"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><input type="button" value="恢復預設" id="btn_reKey" class="btn-3"></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="changeBg" style="display: none;">
+                <div style="float: left;margin-top: 20%;"><input type="button" value="上一個" id="btn_previous" class="btn-3"></div>
+                <div style="display: inline-block;margin-top: 15px;"><img src="./image/yuruCampBG05.png" alt="" width="800px" id="chBgView"></div>
+                <div style="float: right;margin-top: 20%;"><input type="button" value="下一個" id="btn_next" class="btn-3"></div>
+                <div>
+                    <p id="page">1/8</p>
+                    <input type="button" value="遊戲背景" id="btn_chBg" class="btn-3">
+                    <input type="button" value="設定" id="btn_bgSet" class="btn-3">
+                </div>
+            </div>
+        </div>
+        <div id="ctrl">
+            <input type="button" value="Start" id="btn_Pause" class="btn_ctrl">
+            <input type="button" value="自動:關" id="btn_auto" class="btn_ctrl">
+            <input type="button" value="商店" id="btn_goshop" class="btn_ctrl">
+            <input type="button" value="設定" id="btn_setting" class="btn_ctrl">
+            <input type="button" value="回到遊戲" id="btn_regame" style="display: none;">
+        </div>
+        <div id="myCoin">Coin:0</div>
+        <div id="howToPlay">
+            <h1>How to play</h1>
+            <h2>Q,Z控制火球法術上下,W,X控制水球法術上下</h2>
+            <h2>自動:自動將魔法書移置最近的敵人，一次最多作用一個法術</h2>
+            <h2>每15波難度會提升一級，敵人血量上升</h2>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js" integrity="sha512-7Au1ULjlT8PP1Ygs6mDZh9NuQD0A5prSrAUiPHMXpU6g3UMd8qesVnhug5X4RoDr35x5upNpx0A6Sisz1LSTXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js" integrity="sha512-xi/RZRIF/S0hJ+yJJYuZ5yk6/8pCiRlEXZzoguSMl+vk2i3m6UjUO/WcZ11blRL/O+rnj94JRGwt/CHbc9+6EA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="audio.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

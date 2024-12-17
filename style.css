@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#contain{
+    text-align: center;
+}
+body{
+    background-image: url("/image/yuruCampBG04.png");
+}
+#myCanvas{
+    border: 3px solid black;
+    /* background-color: bisque; */
+    background-image: url("./image/yuruCampBG05.png");
+    background-size: 100%100%;
+    margin: auto;
+    display: block;
+}
+#btn_Pause, #btn_goshop, #btn_regame,#btn_auto,#btn_setting {
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    font-size: 16px;
+    margin-top: 3px;
+    border: none;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    vertical-align: middle;
+}
+#ctrl{
+    margin: auto;
+    width: 1200px;
+    border: 3px solid rgb(84, 84, 84);
+    background-color: rgb(255, 248, 187);
+}
+.btn_ctrl:hover{
+    background-color: #2980b9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+#shop{
+    text-align: center;
+    height: 675px;
+    width: 1200px;
+    background-color: bisque;
+    border: 3px solid black;
+    display: none;
+}
+#setting{
+    text-align: center;
+    height: 675px;
+    width: 1200px;
+    background-color: bisque;
+    border: 3px solid black;
+    display: none;
+}
+#itemTableWater{
+    width: 1000px;
+    margin: auto;
+    margin-top: 10px;
+    border: 3px solid rgb(38, 0, 255);
+    border-radius: 10px;
+    font-size: 30px;
+}
+#itemTableFire{
+    width: 1000px;
+    margin: auto;
+    border: 3px solid rgb(250, 84, 8);
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+.btn-3{
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    font-size: 18px;
+    margin-top: 3px;
+    font-family: bold;
+    border: none;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #00AC6A;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    vertical-align: middle;
+}
+.btn-3:hover{
+    background-color: #00B4F4;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.btn-4{
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    font-size: 18px;
+    margin-top: 3px;
+    font-family: bold;
+    border: none;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #c26a00;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    vertical-align: middle;
+}
+.btn-4:hover{
+    background-color: #ff3d6a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+th{
+    border: 3px solid rgb(124, 105, 232);
+}
+td{ 
+    border: 2px solid black;
+}
+#myCoin{
+    font-size: 42px;
+    font-weight: bold;
+    color: red ;
+}
+#howToPlay{
+    margin-top: 90px;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 25px;
+    padding: 20px;
+    border: 2px black solid;
+    color: black;
+}
+#Score{
+    font-size: 80px;
+    position: absolute;
+    top: 15%;
+    left: 35%;
+}
+#topList{
+    margin: auto;
+    background-color: #00AC6A;
+    border: #144500 2px solid;
+    width: 1200px;
+    font-size: 24px;
+}
+#changeBg{
+    width: 1000px;
+    height: 550px;
+    border: 3px solid black;
+    display: inline-block;
+}
+
